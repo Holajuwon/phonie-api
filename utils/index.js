@@ -31,7 +31,7 @@ export default class Helpers {
     const resBody = {
       status: "fail",
       code: status,
-      message: errMessage
+      message: errMessage,
     };
 
     return res.status(status).json(resBody);
