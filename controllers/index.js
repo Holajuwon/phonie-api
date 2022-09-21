@@ -4,7 +4,7 @@ import Helpers from "../utils/index.js";
 export default class Controllers {
   static whichTelco(req, res) {
     const { match, ...data } = req.result;
-    if (!!match) {
+    if (match) {
       TrieNode.addItem(data.phoneNumber);
       Helpers.successResponse(res, "Phone number verified successfully", data, 200);
     } else {
