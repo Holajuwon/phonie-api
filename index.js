@@ -9,5 +9,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
 app.listen(port, () => {
-	console.log(`Server listening on PORT ${port}`);
+  console.log(`Server listening on PORT ${port}`);
 });
