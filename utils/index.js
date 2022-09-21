@@ -8,27 +8,27 @@ export default class Helpers {
 	 */
 
 	static errorResponse = (res, message, status = 500) => {
-		let errMessage
+		let errMessage;
 		if (message == null) {
 			switch (status) {
 				case 400:
-					errMessage = 'Internal server error'
-					break
+					errMessage = "Internal server error";
+					break;
 				case 403:
-					errMessage = 'Invalid user access'
-					break
+					errMessage = "Invalid user access";
+					break;
 				case 422:
-					errMessage = 'Invalid user input'
-					break
+					errMessage = "Invalid user input";
+					break;
 				default:
-					errMessage = 'Internal server error'
-					break
+					errMessage = "Internal server error";
+					break;
 			}
 		} else {
-			errMessage = message
+			errMessage = message;
 		}
-		return res.status(status).send({ status: 'fail', code: status, message: errMessage })
-	}
+		return res.status(status).send({ status: "fail", code: status, message: errMessage });
+	};
 
 	/**
 	 * @description A function that facilitates the response of a successful request
@@ -41,12 +41,12 @@ export default class Helpers {
 
 	static successResponse = (res, message, data, status = 200) => {
 		const resBody = {
-			status: 'success',
+			status: "success",
 			code: status,
 			message,
 			data,
-		}
+		};
 
-		return res.status(status).json(resBody)
-	}
+		return res.status(status).json(resBody);
+	};
 }
