@@ -14,11 +14,19 @@ export default class Middlewares {
     phoneNumber = phoneNumber.replaceAll(/\s|-/g, "");
 
     if (typeof phoneNumber !== "string") {
-      return Helpers.errorResponse(res, "phoneNumber must be a string", 400);
+      return Helpers.errorResponse(
+				res,
+				"phoneNumber must be a string",
+				400
+			);
     }
 
     if (phoneNumber.length < 10) {
-      return Helpers.errorResponse(res, "phoneNumber is invalid", 400);
+      return Helpers.errorResponse(
+				res,
+				"phoneNumber is invalid",
+				400
+			);
     }
 
     if (phoneNumber.length > 11) {
@@ -46,7 +54,7 @@ export default class Middlewares {
     req.result = {
       match: test,
       phoneNumber,
-      telco: !!test ? telco : undefined,
+      telco: test ? telco : undefined,
     };
   }
 

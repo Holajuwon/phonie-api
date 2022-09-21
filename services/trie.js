@@ -1,5 +1,5 @@
 class TrieNode {
-  constructor(params) {
+  constructor() {
     this.next = {};
     this.leaf = false;
   }
