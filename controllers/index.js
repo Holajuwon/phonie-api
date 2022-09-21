@@ -6,9 +6,18 @@ export default class Controllers {
     const { match, ...data } = req.result;
     if (match) {
       TrieNode.addItem(data.phoneNumber);
-      Helpers.successResponse(res, "Phone number verified successfully", data, 200);
+      Helpers.successResponse(
+        res,
+        "Phone number verified successfully",
+        data,
+        200
+      );
     } else {
-      Helpers.errorResponse(res, "Phone Number doesn't match any telco", 400);
+      Helpers.errorResponse(
+        res,
+        "Phone Number doesn't match any telco",
+        400
+      );
     }
   }
 
@@ -16,9 +25,18 @@ export default class Controllers {
     const { phoneNumber } = req.query;
     if (phoneNumber) {
       const result = TrieNode.autocomplete(phoneNumber);
-      Helpers.successResponse(res, "autocomplete successful", result, 200);
+      Helpers.successResponse(
+        res,
+        "autocomplete successful",
+        result,
+        200
+      );
     } else {
-      Helpers.errorResponse(res, "Phone Number is required", 400);
+      Helpers.errorResponse(
+        res,
+        "Phone Number is required",
+        400
+      );
     }
   }
 }

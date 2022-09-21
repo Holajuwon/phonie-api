@@ -27,7 +27,14 @@ export default class Helpers {
     } else {
       errMessage = message;
     }
-    return res.status(status).send({ status: "fail", code: status, message: errMessage });
+
+    const resBody = {
+      status: "fail",
+      code: status,
+      message: errMessage,
+    };
+
+    return res.status(status).json(resBody);
   };
 
   /**
