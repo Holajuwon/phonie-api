@@ -63,7 +63,7 @@ export default class Middlewares {
     Middlewares.verifier(
       req,
       req.phoneNumber,
-      /(^(0|)(7(03|06)|8(03|06|10|13|14|16)|9(03|06))[0-9]{0,7}$)/,
+      /(^(0|)(7(03|06)|8(03|06|10|13|14|16)|9(03|06))(\d){0,7}$)/,
       "MTN"
     );
     next();
@@ -74,7 +74,7 @@ export default class Middlewares {
     Middlewares.verifier(
       req,
       req.phoneNumber,
-      /(^(0|)(7(05)|8(05|07|11|15)|9(05))[0-9]{0,7}$)/,
+      /(^(0|)(7(05)|8(05|07|11|15)|9(05))(\d){0,7}$)/,
       "GLO"
     );
     next();
@@ -85,7 +85,7 @@ export default class Middlewares {
     Middlewares.verifier(
       req,
       req.phoneNumber,
-      /(^(0|)(7(01|04|08)|8(02|08|12)|9(01|02|04))[0-9]{0,7}$)/,
+      /(^(0|)(7(01|04|08)|8(02|08|12)|9(01|02|04))(\d){0,7}$)/,
       "AIRTEL"
     );
     next();
@@ -96,7 +96,7 @@ export default class Middlewares {
     Middlewares.verifier(
       req,
       req.phoneNumber,
-      /(^(0|)(8(09|17|18)|9(08|09))[0-9]{0,7}$)/,
+      /(^(0|)(8(09|17|18)|9(08|09))(\d){0,7}$)/,
       "9MOBILE"
     );
     next();
