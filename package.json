@@ -16,6 +16,8 @@
   "author": "Holajuwon",
   "license": "ISC",
   "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
     "express": "^4.18.1"
   }
 }
